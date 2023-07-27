@@ -39,3 +39,17 @@ cc_binary(
     ],
     linkopts = ["-pthread"],
 )
+
+cc_library(
+    name = "hierarchical_mutex",
+    srcs = ["hierarchical_mutex.h"],
+)
+
+cc_binary(
+    name = "hierarchical_mutex_test",
+    srcs = ["hierarchical_mutex_test.cc"],
+    deps = [
+        ":hierarchical_mutex",
+    ],
+    linkopts = ["-pthread"]
+)
