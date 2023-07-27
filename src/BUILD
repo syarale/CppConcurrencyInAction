@@ -25,3 +25,17 @@ cc_binary(
     ],
     linkopts = ["-pthread"]
 )
+
+cc_library(
+    name = "threadsafe_stack",
+    srcs = ["threadsafe_stack.h"],
+)
+
+cc_binary(
+    name = "threadsafe_stack_test",
+    srcs = ["threadsafe_stack_test.cc"],
+    deps = [
+        ":threadsafe_stack",
+    ],
+    linkopts = ["-pthread"],
+)
