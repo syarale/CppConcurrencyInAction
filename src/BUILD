@@ -53,3 +53,18 @@ cc_binary(
     ],
     linkopts = ["-pthread"]
 )
+
+cc_library(
+    name = "threadsafe_queue",
+    srcs = ["threadsafe_queue.h"],
+)
+
+cc_binary(
+    name = "threadsafe_queue_test",
+    srcs = ["threadsafe_queue_test.cc"],
+    deps = [
+        ":threadsafe_queue",
+    ],
+    copts = ["-g"],
+    linkopts = ["-pthread"]
+)
